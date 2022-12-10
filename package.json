@@ -20,6 +20,7 @@
     "@emotion/react": "^11",
     "@emotion/server": "^11.10.0",
     "@emotion/styled": "^11",
+    "clsx": "^1.2.1",
     "framer-motion": "^6",
     "graphql": "^16.6.0",
     "js-cookie": "^3.0.1",
@@ -29,6 +30,7 @@
     "react-icons": "^4.7.1",
     "react-toastify": "^9.1.1",
     "react-waypoint": "^10.3.0",
+    "sass": "^1.56.2",
     "twin.macro": "^2.8.2"
   },
   "devDependencies": {

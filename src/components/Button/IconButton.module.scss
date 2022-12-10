@@ -1,0 +1,43 @@
+.hiddenText {
+  width: 0;
+  height: 0;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+}
+
+.btnIcon {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: inherit;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-position: center;
+}
+
+/* icon */
+.ico_home {
+  background-image: url("/asset/image/ico/ico_home.svg");
+}
+.ico_search {
+  background-image: url("/asset/image/ico/ico_search.svg");
+}
+.ico_alarm {
+  background-image: url("/asset/image/ico/ico_bell.svg");
+}
+.ico_my {
+  background-image: url("/asset/image/ico/ico_my.svg");
+}
+.ico_more {
+  background-image: url("/asset/image/ico/ico_more.svg");
+}
+.ico_close {
+  background-image: url("/asset/image/ico/ico_close.svg");
+}
+.ico_writing {
+  background-image: url("/asset/image/ico/ico_writing.svg");
+}
+.ico_setting {
+  background-image: url("/asset/image/ico/ico_setting.svg");
+}

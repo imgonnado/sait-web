@@ -1,6 +1,10 @@
-import { css } from "@emotion/react";
+import clsx from "clsx";
 import React, { ReactElement } from "react";
-import tw from "twin.macro";
+
+import Header from "./Header/Header";
+import GNB from "./NavigationBar/GNB";
+
+import styles from "./CommonLayout.module.scss";
 
 interface CommonLayoutProps {
   children: React.ReactNode;
@@ -10,29 +14,12 @@ export default function CommonLayout({
   children,
 }: CommonLayoutProps): ReactElement {
   return (
-    <div css={[tw`w-screen h-screen bg-black flex justify-center`]}>
-      <div
-        css={[
-          tw`flex flex-col`,
-          css`
-            max-width: 430px;
-            background-color: rgb(246, 247, 251);
-          `,
-        ]}
-      >
-        <nav
-          css={[
-            tw`bg-blue-500 flex justify-between items-center px-10`,
-            css`
-              height: 80px;
-            `,
-          ]}
-        >
-          <div>Side.IT</div>
-          <div>아이콘</div>
-        </nav>
+    <div className={styles.wrap}>
+      <Header />
+      <main id="main_content" className={clsx(styles.content, styles.main)}>
         {children}
-      </div>
+      </main>
+      <GNB />
     </div>
   );
 }

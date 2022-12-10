@@ -7,6 +7,9 @@ import { ChakraProvider, theme } from "@chakra-ui/react";
 
 import { useApollo } from "../src/lib/apolloClient";
 
+import "../styles/globals.css";
+import "../styles/reset.css";
+
 export type NextPageWithLayout<P = unknown, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
 };

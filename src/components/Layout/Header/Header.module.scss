@@ -1,0 +1,60 @@
+.headerArea {
+  background-color: var(--bg-1);
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  &.fixed + .content {
+    padding-top: 143px;
+  }
+}
+
+.header {
+  position: relative;
+  height: 56px;
+  padding: 15px 20px;
+
+  .title {
+    padding: 0 24px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.25em;
+  }
+  .btnArr {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .btnClose {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .tool {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &.left {
+    display: flex;
+
+    .title {
+      flex-grow: 1;
+      padding: 0;
+      text-align: left;
+    }
+    .tool {
+      flex-shrink: 0;
+    }
+  }
+}

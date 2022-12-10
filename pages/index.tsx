@@ -3,142 +3,85 @@ import { ReactElement } from "react";
 import tw from "twin.macro";
 
 import CommonLayout from "../src/components/Layout/CommonLayout";
-import { useProjectList } from "../src/hooks/api/useProject";
+import ProjectList from "../src/components/ProjectList/ProjectList";
 
 function App() {
-  const { projectList, projectDataIsError, projectDataIsloading } =
-    useProjectList();
+  const projectListData = [
+    {
+      id: 1,
+      // 이미지
+      image: "/asset/image/temp/temp_project_list.jpg",
+      // 제목
+      title: `앱개발 초기 팀원 모집 / 스터디가능 앱 개발 초기 팀원앱 개발
+                  초기기 / 스터디가능 앱 개발 초기 팀원앱 개발 초기기 /
+                  스터디가능 앱 개발 초기 팀원앱 개발 초기기`,
+      // 태그들
+      tag: "태그",
+      // 키워드들, /search/[:keyword]
+      keywords: [
+        {
+          en: "english",
+          ko: "한글",
+        },
+        {
+          en: "english",
+          ko: "한글",
+        },
+        {
+          en: "english",
+          ko: "한글",
+        },
+        {
+          en: "english",
+          ko: "한글",
+        },
+        {
+          en: "english",
+          ko: "한글",
+        },
+      ],
+      // 멤버리스트(id, image, name), 4개 이상은 + 버튼
+      members: [
+        {
+          id: 1,
+          image: "/asset/image/temp/temp_project_list.jpg",
+          name: "이름",
+        },
+        {
+          id: 2,
+          image: "/asset/image/temp/temp_project_list.jpg",
+          name: "이름",
+        },
+        {
+          id: 3,
+          image: "/asset/image/temp/temp_project_list.jpg",
+          name: "이름",
+        },
+        {
+          id: 4,
+          image: "/asset/image/temp/temp_project_list.jpg",
+          name: "이름",
+        },
+      ],
+      // status:Enum type (모집중, 모집완료, 진행중, 완료)
+      // 멤버 리스트 옆 status에 대한 아이콘
+      status: 0,
+      // 좋아요
+      like: 1,
+      maxMember: 40,
+    },
+  ];
 
-  console.log(projectList);
-
-  if (projectDataIsError) {
-    return <div>error</div>;
-  }
   return (
     <div
       css={[
-        tw``,
+        tw`block`,
         css`
-          padding: 14px 16px;
+          display: block;
         `,
       ]}
     >
-      <h2
-        css={[
-          css`
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 14px;
-          `,
-        ]}
-      >
-        모집중인 인기 프로젝트
-      </h2>
-      <ul>
-        {!projectDataIsloading &&
-          projectList?.length > 0 &&
-          projectList.map(project => {
-            return (
-              <li
-                key={project.id}
-                css={[
-                  tw`flex w-full`,
-                  css`
-                    height: 320px;
-                  `,
-                ]}
-              >
-                <div
-                  css={[
-                    css`
-                      width: 100%;
-                      display: flex;
-                      position: relative;
-
-                      & > * {
-                        height: 300px;
-                        margin: 0;
-                        display: inline;
-                        white-space: nowrap;
-                        &:nth-child(1) {
-                          background-color: salmon;
-                          min-width: 160px;
-                        }
-                        &:nth-child(2) {
-                          background-color: khaki;
-                          flex-basis: 100%;
-                          flex: 1 1 auto;
-                          flex-wrap: nowrap;
-                          overflow: hidden;
-                          text-overflow: ellipsis;
-                        }
-                      }
-                    `,
-                  ]}
-                >
-                  <pre>이미지영역</pre>
-                  <section
-                    css={[
-                      css`
-                        padding: 4px;
-                      `,
-                    ]}
-                  >
-                    <button
-                      css={[
-                        css`
-                          background-color: green;
-                          border-radius: 14px;
-                          padding: 4px 8px;
-                        `,
-                      ]}
-                    >
-                      스킬 쌓기
-                    </button>
-                    <div
-                      css={[
-                        css`
-                          & > * {
-                            margin-bottom: 4px;
-                          }
-                          & > *:last-child {
-                            margin-bottom: 0;
-                          }
-                        `,
-                      ]}
-                    >
-                      <h3
-                        css={[
-                          css`
-                            font-size: 18px;
-                            font-weight: 700;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                          `,
-                        ]}
-                      >
-                        {project.projectTitle}
-                      </h3>
-                      <p
-                        css={[
-                          css`
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            font-size: 14px;
-                            font-weight: 400;
-                            color: rgb(128, 128, 128);
-                          `,
-                        ]}
-                      >
-                        {project.description}
-                      </p>
-                    </div>
-                  </section>
-                </div>
-              </li>
-            );
-          })}
-      </ul>
+      <ProjectList data={projectListData} />
     </div>
   );
 }

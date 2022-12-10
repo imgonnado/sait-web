@@ -80,5 +80,8 @@ module.exports = {
         devDependencies: ["**/*.stories.tsx"],
       },
     ],
+    // enum issue
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
   },
 };
