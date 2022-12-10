@@ -1,0 +1,14 @@
+query Projects {
+  projects {
+    nodes {
+      id
+      projectTitle
+      hitCount
+      description
+      projectMembers {
+        id
+        userId
+      }
+    }
+  }
+}
