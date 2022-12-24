@@ -1,9 +1,11 @@
 import { css } from "@emotion/react";
 import { ReactElement } from "react";
 import tw from "twin.macro";
+import Image from "next/image";
 
 import CommonLayout from "../src/components/Layout/CommonLayout";
 import ProjectList from "../src/components/ProjectList/ProjectList";
+import Button from "../src/components/Button/Button";
 
 function App() {
   const projectListData = [
@@ -82,6 +84,25 @@ function App() {
       ]}
     >
       <ProjectList data={projectListData} />
+      <Button theme="secondary" as="a" href="www.google.com" disabled>
+        버튼
+        <Image
+          src="/asset/image/ico/ico_bell.svg"
+          layout="fixed"
+          height="24px"
+          width="24px"
+        />
+      </Button>
+      <Button theme="secondary" as="button" disabled>
+        버튼
+        <Image
+          src="/asset/image/ico/ico_bell.svg"
+          layout="fixed"
+          height="24px"
+          width="24px"
+          style={{ marginLeft: 5 }}
+        />
+      </Button>
     </div>
   );
 }
