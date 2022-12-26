@@ -6,6 +6,8 @@ type ButtonProps<C extends ElementType> = {
   as?: C;
   children: ReactNode;
   theme?: "primary" | "secondary" | "tertiary";
+  size?: "small";
+  width?: "narrow";
   disabled?: boolean;
 } & ComponentPropsWithoutRef<C>;
 
@@ -13,6 +15,8 @@ function Button<C extends ElementType = "button">({
   as,
   children,
   theme,
+  size,
+  width,
   disabled,
   ...restProps
 }: ButtonProps<C>) {
@@ -23,7 +27,13 @@ function Button<C extends ElementType = "button">({
   return (
     <Component
       {...restProps}
-      className={clsx(styles.btn, aDisabled && styles.disabled)}
+      className={clsx(
+        styles.btn,
+        aDisabled && styles.disabled,
+        size && styles.small,
+        theme === "secondary" && styles.light,
+        width === "narrow" && styles.btnFluid
+      )}
       disabled={btnDisabled}
     >
       <span>{children}</span>

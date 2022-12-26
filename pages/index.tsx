@@ -6,6 +6,7 @@ import Image from "next/image";
 import CommonLayout from "../src/components/Layout/CommonLayout";
 import ProjectList from "../src/components/ProjectList/ProjectList";
 import Button from "../src/components/Button/Button";
+import ButtonArea from "../src/components/Button/ButtonArea";
 
 function App() {
   const projectListData = [
@@ -84,25 +85,14 @@ function App() {
       ]}
     >
       <ProjectList data={projectListData} />
-      <Button theme="secondary" as="a" href="www.google.com" disabled>
-        버튼
-        <Image
-          src="/asset/image/ico/ico_bell.svg"
-          layout="fixed"
-          height="24px"
-          width="24px"
-        />
-      </Button>
-      <Button theme="secondary" as="button" disabled>
-        버튼
-        <Image
-          src="/asset/image/ico/ico_bell.svg"
-          layout="fixed"
-          height="24px"
-          width="24px"
-          style={{ marginLeft: 5 }}
-        />
-      </Button>
+      <ButtonArea>
+        <Button theme="secondary" as="a" href="www.google.com">
+          버튼
+        </Button>
+        <Button as="button" width="narrow">
+          버튼
+        </Button>
+      </ButtonArea>
     </div>
   );
 }
