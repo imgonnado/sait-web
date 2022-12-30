@@ -2,8 +2,12 @@ import { css } from "@emotion/react";
 import { ReactElement } from "react";
 import tw from "twin.macro";
 
+import BottomSheet from "../src/components/BottomSheet/BottomSheet";
+import Input from "../src/components/Input/Input";
 import CommonLayout from "../src/components/Layout/CommonLayout";
 import ProjectList from "../src/components/ProjectList/ProjectList";
+import LimitedTextarea from "../src/components/Textarea/LimitedTextarea";
+import ToastMessage from "../src/components/Toast/ToastMessage";
 
 function App() {
   const projectListData = [
@@ -82,6 +86,16 @@ function App() {
       ]}
     >
       <ProjectList data={projectListData} />
+
+      <div css={[tw`mt-[30px]`, css``]} />
+      <ToastMessage />
+      {/* style 위치 찾아야 됨 */}
+      <div css={[tw`mt-[30px]`, css``]} />
+      <BottomSheet />
+      <div css={[tw`mt-[30px]`, css``]} />
+      <Input />
+      <div css={[tw`mt-[30px]`, css``]} />
+      <LimitedTextarea minInput={10} maxInput={1000} />
     </div>
   );
 }
