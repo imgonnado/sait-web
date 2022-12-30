@@ -8,6 +8,8 @@ import CommonLayout from "../src/components/Layout/CommonLayout";
 import ProjectList from "../src/components/ProjectList/ProjectList";
 import LimitedTextarea from "../src/components/Textarea/LimitedTextarea";
 import ToastMessage from "../src/components/Toast/ToastMessage";
+import Button from "../src/components/Button/Button";
+import ButtonArea from "../src/components/Button/ButtonArea";
 
 function App() {
   const projectListData = [
@@ -96,6 +98,14 @@ function App() {
       <Input />
       <div css={[tw`mt-[30px]`, css``]} />
       <LimitedTextarea minInput={10} maxInput={1000} />
+      <ButtonArea>
+        <Button theme="secondary" as="a" href="www.google.com">
+          버튼
+        </Button>
+        <Button as="button" width="narrow">
+          버튼
+        </Button>
+      </ButtonArea>
     </div>
   );
 }

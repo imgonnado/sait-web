@@ -1,0 +1,9 @@
+.btnArea {
+  margin: 0 -3px;
+  display: flex;
+  justify-content: space-between;
+}
+.btnArea a,
+.btnArea button {
+  margin: 0 3px;
+}
