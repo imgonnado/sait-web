@@ -23,56 +23,8 @@
     color: var(--text-default);
     font-size: 14px;
   }
-
-  &_popup {
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background: rgb(0, 0, 0, 0.2);
-    height: 100%;
-    width: 100%;
-    z-index: 100;
-
-    &.on {
-      display: block;
-    }
-
-    .popup {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      padding: 35px 20px 32px;
-      border-radius: 16px 16px 0 0;
-      background: #fff;
-      text-align: center;
-    }
-
-    .popup_content {
-      position: relative;
-      padding-bottom: 35px;
-    }
-
-    .popup_title {
-      display: block;
-      margin-bottom: 8px;
-      color: #292929;
-      font-size: 18px;
-      font-weight: 500;
-    }
-  }
-  /* .select_popup .btn_area {
-    position: absolute;
-    left: 0;
-    bottom: -60px;
-    width: 100%;
-} */
 }
 
-.btn_area {
-  margin-top: 30px;
-}
 .btn {
   &.light {
     border: 1px solid var(--line-1);

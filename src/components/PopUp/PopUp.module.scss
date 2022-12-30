@@ -1,0 +1,52 @@
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgb(0, 0, 0, 0.2);
+  height: 100vh;
+  width: 100vw;
+
+  &.on {
+    display: block;
+  }
+  &Inner {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 32px 20px;
+    border-radius: 16px 16px 0 0;
+    background: #fff;
+    text-align: center;
+    z-index: 100;
+  }
+  &Title {
+    display: block;
+    margin-bottom: 8px;
+    padding: 0 30px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: #292929;
+  }
+  &Content {
+    text-align: center;
+    padding: 0 50px;
+    padding-bottom: 32px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: #292929;
+  }
+}

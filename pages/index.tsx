@@ -10,6 +10,8 @@ import LimitedTextarea from "../src/components/Textarea/LimitedTextarea";
 import ToastMessage from "../src/components/Toast/ToastMessage";
 import Button from "../src/components/Button/Button";
 import ButtonArea from "../src/components/Button/ButtonArea";
+import PopUp from "../src/components/PopUp/PopUp";
+import useDisclosure from "../src/hooks/useDisclosure";
 
 function App() {
   const projectListData = [
@@ -78,24 +80,51 @@ function App() {
     },
   ];
 
+  const {
+    isOpen: isOpenPopUp,
+    onOpen: onOpenPopUp,
+    onClose: onClosePopUp,
+  } = useDisclosure();
+
   return (
-    <div
-      css={[
-        tw`block`,
-        css`
-          display: block;
-        `,
-      ]}
-    >
+    <div>
       <ProjectList data={projectListData} />
 
       <div css={[tw`mt-[30px]`, css``]} />
       <ToastMessage />
-      {/* style 위치 찾아야 됨 */}
+
+      {/* popup */}
+      <div css={[tw`mt-[30px]`, css``]} />
+      <Button as="button" type="button" onClick={onOpenPopUp}>
+        <span>[팝업버튼]알림 방식을 선택하세요.</span>
+      </Button>
+      <PopUp
+        isOpen={isOpenPopUp}
+        onClose={onClosePopUp}
+        title="모집 알림 해지"
+        content="실시간으로 모집 상태를 안내해주는
+모집 알림을 해지하시겠어요?"
+        buttons={[
+          <Button
+            theme="secondary"
+            as="button"
+            type="button"
+            onClick={onClosePopUp}
+          >
+            취소
+          </Button>,
+          <Button as="button" type="button" onClick={onClosePopUp}>
+            확인
+          </Button>,
+        ]}
+      />
+
       <div css={[tw`mt-[30px]`, css``]} />
       <BottomSheet />
+
       <div css={[tw`mt-[30px]`, css``]} />
       <Input />
+
       <div css={[tw`mt-[30px]`, css``]} />
       <LimitedTextarea minInput={10} maxInput={1000} />
       <ButtonArea>
