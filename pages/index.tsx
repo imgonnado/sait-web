@@ -1,5 +1,4 @@
-import { css } from "@emotion/react";
-import { ReactElement } from "react";
+import { ReactElement, useEffect } from "react";
 import tw from "twin.macro";
 
 import BottomSheet from "../src/components/BottomSheet/BottomSheet";
@@ -7,11 +6,11 @@ import Input from "../src/components/Input/Input";
 import CommonLayout from "../src/components/Layout/CommonLayout";
 import ProjectList from "../src/components/ProjectList/ProjectList";
 import LimitedTextarea from "../src/components/Textarea/LimitedTextarea";
-import ToastMessage from "../src/components/Toast/ToastMessage";
 import Button from "../src/components/Button/Button";
 import ButtonArea from "../src/components/Button/ButtonArea";
 import PopUp from "../src/components/PopUp/PopUp";
 import useDisclosure from "../src/hooks/useDisclosure";
+import Toast from "../src/components/Toast/Toast";
 
 function App() {
   const projectListData = [
@@ -80,21 +79,31 @@ function App() {
     },
   ];
 
+  // usePopup
   const {
     isOpen: isOpenPopUp,
     onOpen: onOpenPopUp,
     onClose: onClosePopUp,
   } = useDisclosure();
 
+  // useToast
+  const {
+    isOpen: isOpenToast,
+    onOpen: onOpenToast,
+    onClose: onCloseToast,
+  } = useDisclosure();
+  useEffect(() => {
+    setTimeout(() => {
+      onCloseToast();
+    }, 3000);
+  });
+
   return (
     <div>
       <ProjectList data={projectListData} />
 
-      <div css={[tw`mt-[30px]`, css``]} />
-      <ToastMessage />
-
       {/* popup */}
-      <div css={[tw`mt-[30px]`, css``]} />
+      <div css={[tw`mt-[30px]`]} />
       <Button as="button" type="button" onClick={onOpenPopUp}>
         <span>[팝업버튼]알림 방식을 선택하세요.</span>
       </Button>
@@ -119,13 +128,19 @@ function App() {
         ]}
       />
 
-      <div css={[tw`mt-[30px]`, css``]} />
+      <div css={[tw`mt-[30px]`]} />
+      <Button as="button" type="button" onClick={onOpenToast}>
+        <span>[토스트버튼]duration:3000</span>
+      </Button>
+      <Toast show={isOpenToast} title="본캐 홍길동 어쩌고 저쩌고 했습니다." />
+
+      <div css={[tw`mt-[30px]`]} />
       <BottomSheet />
 
-      <div css={[tw`mt-[30px]`, css``]} />
+      <div css={[tw`mt-[30px]`]} />
       <Input />
 
-      <div css={[tw`mt-[30px]`, css``]} />
+      <div css={[tw`mt-[30px]`]} />
       <LimitedTextarea minInput={10} maxInput={1000} />
       <ButtonArea>
         <Button theme="secondary" as="a" href="www.google.com">

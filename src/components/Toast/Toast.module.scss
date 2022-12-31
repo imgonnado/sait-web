@@ -1,0 +1,48 @@
+.toast {
+  position: fixed;
+  bottom: 24px;
+  padding: 3px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  flex-direction: column-reverse;
+  z-index: 50;
+
+  &Inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 6px;
+    height: 48px;
+    width: calc(100vw - 40px);
+    border-radius: 12px;
+    overflow: hidden;
+    opacity: 0.8;
+    background: #292929;
+    color: #fff;
+    &.hide {
+      display: none;
+    }
+  }
+  &Title {
+    text-align: center;
+  }
+
+  &.fadeOut {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: visibility 1.5s, opacity 1.5s;
+    -moz-transition: visibility 1.5s, opacity 1.5s;
+    -ms-transition: visibility 1.5s, opacity 1.5s;
+    -o-transition: visibility 1.5s, opacity 1.5s;
+    transition: visibility 1.5s, opacity 1.5s;
+    -webkit-transition-delay: 3s;
+    -moz-transition-delay: 3s;
+    -ms-transition-delay: 3s;
+    -o-transition-delay: 3s;
+    transition-delay: 3s;
+  }
+}
