@@ -1,0 +1,44 @@
+.text {
+  word-break: keep-all;
+}
+
+.sm {
+  font-size: 18px;
+  line-height: 26px;
+}
+.md {
+  font-size: 20px;
+  line-height: 30px;
+}
+.lg {
+  font-size: 24px;
+  line-height: 36px;
+}
+.xl {
+  font-size: 28px;
+  line-height: 42px;
+}
+.bold {
+  font-weight: 700;
+}
+.medium {
+  font-weight: 500;
+}
+.regular {
+  font-weight: 400;
+}
+.demiLight {
+  font-weight: 350;
+}
+.black-300 {
+  color: #292929;
+}
+.black-200 {
+  color: #707070;
+}
+.black-100 {
+  color: #999999;
+}
+.black-0 {
+  color: #ffffff;
+}
