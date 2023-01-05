@@ -7,7 +7,7 @@ interface CheckboxProps {
   id?: string;
   name?: string;
   checkboxType?: "toggle";
-  textColor?: "on";
+  textColor?: "primary";
   disabled?: boolean;
 }
 
