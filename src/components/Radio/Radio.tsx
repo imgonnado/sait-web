@@ -6,7 +6,7 @@ interface RadioProps {
   children: React.ReactNode;
   id?: string;
   name?: string;
-  textColor?: "on";
+  textColor?: "primary";
   disabled?: boolean;
   checked?: boolean;
 }
