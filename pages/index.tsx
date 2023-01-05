@@ -89,9 +89,7 @@ function App() {
         <Button theme="secondary" as="a" href="www.google.com">
           버튼
         </Button>
-        <Button as="button" width="narrow">
-          버튼
-        </Button>
+        <Button as="button">버튼</Button>
       </ButtonArea>
     </div>
   );
