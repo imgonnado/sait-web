@@ -5,9 +5,9 @@ import styles from "./Text.module.scss";
 
 type TextProps<C extends ElementType> = {
   as?: C;
-  size?: "md" | "lg";
+  size?: "lg" | "md" | "sm" | "xs";
   fw?: "demiLight" | "regular" | "medium" | "bold";
-  color?: "black-300" | "black-200" | "black-100" | "black-0";
+  color?: "default" | "darkgray" | "gray" | "lightgray" | "light";
   children: ReactNode;
 } & ComponentPropsWithoutRef<C>;
 
@@ -15,7 +15,7 @@ function Text<C extends ElementType = "p">({
   as,
   size = "lg",
   fw = "regular",
-  color = "black-300",
+  color = "default",
   children,
   ...restProps
 }: TextProps<C>) {
@@ -23,7 +23,12 @@ function Text<C extends ElementType = "p">({
 
   return (
     <Component
-      className={clsx(styles.text, styles[size], styles[fw], styles[color])}
+      className={clsx(
+        styles.text,
+        styles[`${size}`],
+        styles[`${fw}`],
+        styles[`${color}`]
+      )}
       {...restProps}
     >
       {children}

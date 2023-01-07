@@ -5,9 +5,9 @@ import styles from "./Heading.module.scss";
 
 type HeadingProps<C extends ElementType> = {
   as?: C;
-  size?: "sm" | "md" | "lg" | "xl";
+  size?: "3xl" | "2xl" | "xl" | "lg" | "md" | "sm";
   fw?: "demiLight" | "regular" | "medium" | "bold";
-  color?: "black-300" | "black-200" | "black-100" | "black-0";
+  color?: "default" | "darkgray" | "gray" | "lightgray" | "light";
   children: ReactNode;
 } & ComponentPropsWithoutRef<C>;
 
@@ -15,7 +15,7 @@ function Heading<C extends ElementType = "h1">({
   as,
   size = "lg",
   fw = "regular",
-  color = "black-300",
+  color = "default",
   children,
   ...restProps
 }: HeadingProps<C>) {
@@ -23,7 +23,12 @@ function Heading<C extends ElementType = "h1">({
 
   return (
     <Component
-      className={clsx(styles.text, styles[size], styles[fw], styles[color])}
+      className={clsx(
+        styles.text,
+        styles[`${size}`],
+        styles[`${fw}`],
+        styles[`${color}`]
+      )}
       {...restProps}
     >
       {children}

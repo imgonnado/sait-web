@@ -1,44 +1,53 @@
 .text {
   word-break: keep-all;
-}
-
-.sm {
+  font-weight: 400;
   font-size: 18px;
   line-height: 26px;
 }
-.md {
-  font-size: 20px;
-  line-height: 30px;
+
+.\33xl {
+  font-size: 28px;
+  line-height: 42px;
 }
-.lg {
+.\32xl {
   font-size: 24px;
   line-height: 36px;
 }
 .xl {
-  font-size: 28px;
-  line-height: 42px;
+  font-size: 20px;
+  line-height: 30px;
 }
+.md {
+  font-size: 16px;
+  line-height: 24px;
+}
+.sm {
+  font-size: 14px;
+  line-height: 22px;
+}
+
 .bold {
   font-weight: 700;
 }
 .medium {
   font-weight: 500;
 }
-.regular {
-  font-weight: 400;
-}
 .demiLight {
-  font-weight: 350;
+  font-weight: 300;
 }
-.black-300 {
-  color: #292929;
+
+.default {
+  color: var(--text-default);
 }
-.black-200 {
-  color: #707070;
+.darkgray {
+  color: var(--text-darkgray);
 }
-.black-100 {
-  color: #999999;
+.gray {
+  color: var(--text-gray);
 }
-.black-0 {
-  color: #ffffff;
+.lightgray {
+  color: var(--text-lightgray);
+}
+.light {
+  color: var(--text-light);
 }
