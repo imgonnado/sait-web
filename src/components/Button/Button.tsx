@@ -5,18 +5,16 @@ import styles from "./Button.module.scss";
 type ButtonProps<C extends ElementType> = {
   as?: C;
   children: ReactNode;
-  theme?: "primary" | "secondary" | "tertiary";
-  size?: "small";
-  width?: "narrow";
+  theme?: "primary" | "secondary";
+  size?: "md" | "sm";
   disabled?: boolean;
 } & ComponentPropsWithoutRef<C>;
 
 function Button<C extends ElementType = "button">({
   as,
   children,
-  theme,
-  size,
-  width,
+  theme = "primary",
+  size = "md",
   disabled,
   ...restProps
 }: ButtonProps<C>) {
@@ -30,9 +28,8 @@ function Button<C extends ElementType = "button">({
       className={clsx(
         styles.btn,
         aDisabled && styles.disabled,
-        size && styles.small,
-        theme === "secondary" && styles.light,
-        width === "narrow" && styles.btnFluid
+        styles[size],
+        styles[theme]
       )}
       disabled={btnDisabled}
     >
