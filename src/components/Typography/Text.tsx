@@ -8,6 +8,7 @@ type TextProps<C extends ElementType> = {
   size?: "lg" | "md" | "sm" | "xs";
   fw?: "demiLight" | "regular" | "medium" | "bold";
   color?: "default" | "darkgray" | "gray" | "lightgray" | "light";
+  className?: string;
   children: ReactNode;
 } & ComponentPropsWithoutRef<C>;
 
@@ -16,6 +17,7 @@ function Text<C extends ElementType = "p">({
   size = "lg",
   fw = "regular",
   color = "default",
+  className,
   children,
   ...restProps
 }: TextProps<C>) {
@@ -27,7 +29,8 @@ function Text<C extends ElementType = "p">({
         styles.text,
         styles[`${size}`],
         styles[`${fw}`],
-        styles[`${color}`]
+        styles[`${color}`],
+        className
       )}
       {...restProps}
     >
