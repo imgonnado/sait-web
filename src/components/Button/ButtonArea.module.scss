@@ -2,8 +2,23 @@
   margin: 0 -3px;
   display: flex;
   justify-content: space-between;
-}
-.btnArea a,
-.btnArea button {
-  margin: 0 3px;
+
+  a,
+  button {
+    margin: 0 3px;
+  }
+
+  &.left {
+    button:first-child,
+    a:first-child {
+      width: 35%;
+    }
+  }
+
+  &.right {
+    button:last-child,
+    a:last-child {
+      width: 35%;
+    }
+  }
 }

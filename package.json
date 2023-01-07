@@ -11,7 +11,8 @@
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "codegen": "graphql-codegen --config codegen.yml"
+    "codegen": "graphql-codegen --config codegen.yml",
+    "pre-commit": "npm test && eslint"
   },
   "dependencies": {
     "@apollo/client": "^3.7.1",

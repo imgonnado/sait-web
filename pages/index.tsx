@@ -1,5 +1,6 @@
 import { ReactElement, useEffect } from "react";
 import tw from "twin.macro";
+import Image from "next/image";
 
 import BottomSheet from "../src/components/BottomSheet/BottomSheet";
 import Input from "../src/components/Input/Input";
@@ -11,6 +12,7 @@ import ButtonArea from "../src/components/Button/ButtonArea";
 import PopUp from "../src/components/PopUp/PopUp";
 import useDisclosure from "../src/hooks/useDisclosure";
 import Toast from "../src/components/Toast/Toast";
+import Radio from "../src/components/Radio/Radio";
 
 function App() {
   const projectListData = [
@@ -142,13 +144,12 @@ function App() {
 
       <div css={[tw`mt-[30px]`]} />
       <LimitedTextarea minInput={10} maxInput={1000} />
-      <ButtonArea>
+      <ButtonArea width="narrow">
         <Button theme="secondary" as="a" href="www.google.com">
           버튼
         </Button>
-        <Button as="button" width="narrow">
-          버튼
-        </Button>
+        <Button as="button">버튼</Button>
+        <Button as="button">버튼</Button>
       </ButtonArea>
     </div>
   );
