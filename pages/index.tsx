@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 import { ReactElement } from "react";
 import tw from "twin.macro";
+import Image from "next/image";
 
 import BottomSheet from "../src/components/BottomSheet/BottomSheet";
 import Input from "../src/components/Input/Input";
@@ -10,6 +11,7 @@ import LimitedTextarea from "../src/components/Textarea/LimitedTextarea";
 import ToastMessage from "../src/components/Toast/ToastMessage";
 import Button from "../src/components/Button/Button";
 import ButtonArea from "../src/components/Button/ButtonArea";
+import Radio from "../src/components/Radio/Radio";
 
 function App() {
   const projectListData = [
@@ -105,6 +107,7 @@ function App() {
         <Button as="button" width="narrow">
           버튼
         </Button>
+        <Button as="button">버튼</Button>
       </ButtonArea>
     </div>
   );

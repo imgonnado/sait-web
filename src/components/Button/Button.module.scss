@@ -2,10 +2,7 @@
   width: 100%;
   height: 60px;
   padding: 0 10px;
-  border: 1px solid var(--primary-color);
   border-radius: 16px;
-  background-color: var(--primary-color);
-  color: var(--text-light);
   font-weight: 500;
 
   & > span {
@@ -20,29 +17,33 @@
       margin-left: 5px;
     }
   }
-}
-.btn.light {
-  border: 1px solid var(--line-1);
-  background-color: var(--bg-1);
-  color: var(--text-default);
+
+  &.secondary {
+    border: 1px solid var(--line-1);
+    background-color: var(--bg-1);
+    color: var(--text-default);
+  }
+  &.primary {
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--text-light);
+  }
+
+  &.sm {
+    height: 48px;
+    font-size: 14px;
+  }
+  &:disabled,
+  &.disabled {
+    border: 1px solid var(--bg-disable);
+    background-color: var(--bg-disable);
+    color: var(--text-disable);
+    pointer-events: none;
+  }
 }
 
-.btn:disabled,
-.disabled {
-  border: 1px solid var(--bg-disable);
-  background-color: var(--bg-disable);
-  color: var(--text-disable);
-  pointer-events: none;
-}
 a.btn {
   display: inline-block;
   text-decoration: none;
   text-align: center;
-}
-.btn.small {
-  height: 48px;
-  font-size: 14px;
-}
-.btn.btnFluid {
-  width: 35%;
 }
