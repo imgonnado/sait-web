@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 import clsx from "clsx";
 
 import ButtonArea from "../Button/ButtonArea";
-
 import styles from "./PopUp.module.scss";
 
 interface PopUpProps {
