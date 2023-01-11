@@ -1,0 +1,49 @@
+.textarea {
+  position: relative;
+
+  &_textCounter {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    color: var(--text-light-gray);
+
+    &--disabled {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      color: #d9d9d9;
+    }
+  }
+}
+
+.limitedTextarea {
+  min-height: 182px;
+  padding: 16px 16px 32px;
+  box-sizing: border-box;
+  resize: none;
+  width: 100%;
+  outline-color: var(--primary-color);
+  border-radius: 16px;
+  border: 1px solid #e3e3e3;
+
+  &::placeholder {
+    color: var(--text-light-gray);
+  }
+
+  &:disabled {
+    &::placeholder {
+      color: #d9d9d9;
+    }
+    background-color: #ffffff;
+  }
+}
+
+.errMsg {
+  color: #ff0000;
+  position: relative;
+
+  &_IcnTooltip {
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+}

@@ -3,7 +3,6 @@ import { ReactElement, ReactNode } from "react";
 import { GlobalStyles } from "twin.macro";
 import type { AppProps } from "next/app";
 import { ApolloProvider } from "@apollo/client";
-import { ChakraProvider, theme } from "@chakra-ui/react";
 
 import { useApollo } from "../src/lib/apolloClient";
 
@@ -24,10 +23,8 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
 
   return (
     <ApolloProvider client={apolloClient}>
-      <ChakraProvider theme={theme}>
-        <GlobalStyles />
-        {getLayout(<Component {...pageProps} />)}
-      </ChakraProvider>
+      <GlobalStyles />
+      {getLayout(<Component {...pageProps} />)}
     </ApolloProvider>
   );
 }

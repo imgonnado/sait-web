@@ -14,7 +14,8 @@ function ButtonArea({ children, narrow, className }: ButtonAreaProps) {
       className={clsx(
         styles.btnArea,
         narrow === "left" && styles.left,
-        narrow === "right" && styles.right
+        narrow === "right" && styles.right,
+        className
       )}
     >
       {children}
