@@ -143,9 +143,6 @@ function App() {
 
       <div css={[tw`mt-[30px]`]} />
       <ToastMessage />
-      {/* style 위치 찾아야 됨 */}
-      <div css={[tw`mt-[30px]`]} />
-      <BottomSheet />
       <div css={[tw`mt-[30px]`]} />
       <Input />
       <div css={[tw`mt-[30px]`]} />
