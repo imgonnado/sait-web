@@ -1,0 +1,16 @@
+.noneWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  .noneIcon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  .noneText {
+    font-size: 16px;
+  }
+}
