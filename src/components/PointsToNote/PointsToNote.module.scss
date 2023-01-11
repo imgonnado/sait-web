@@ -11,8 +11,9 @@
 .ul {
   margin-left: 16px;
   list-style-type: disc;
-}
-
-.text {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 300;
+  color: var(--text-dark-gray);
   word-break: break-word;
 }

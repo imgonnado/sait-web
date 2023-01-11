@@ -1,5 +1,4 @@
 import Heading from "../Typography/Heading";
-import Text from "../Typography/Text";
 
 import styles from "./PointsToNote.module.scss";
 
@@ -23,17 +22,7 @@ function PointsToNote({ title, data }: PointsToNoteProps) {
       </div>
       <ul className={styles.ul}>
         {data.map(({ id, content }) => (
-          <li key={id}>
-            <Text
-              as="span"
-              size="md"
-              fw="demiLight"
-              color="darkgray"
-              className={styles.text}
-            >
-              {content}
-            </Text>
-          </li>
+          <li key={id}>{content}</li>
         ))}
       </ul>
     </div>
