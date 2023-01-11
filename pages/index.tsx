@@ -2,7 +2,6 @@ import { css } from "@emotion/react";
 import { ReactElement } from "react";
 import tw from "twin.macro";
 
-import BottomSheet from "../src/components/BottomSheet/BottomSheet";
 import Input from "../src/components/Input/Input";
 import CommonLayout from "../src/components/Layout/CommonLayout";
 import ProjectList from "../src/components/ProjectList/ProjectList";
@@ -98,13 +97,13 @@ function App() {
       <Button as="button" type="button" onClick={onOpenPopUp}>
         <span>[팝업버튼]알림 방식을 선택하세요.</span>
       </Button>
-      <PopUp
-        isOpen={isOpenPopUp}
-        onClose={onClosePopUp}
-        title="모집 알림 해지"
-        content="실시간으로 모집 상태를 안내해주는
-모집 알림을 해지하시겠어요?"
-        buttons={[
+
+      <PopUp isOpen={isOpenPopUp} onClose={onClosePopUp}>
+        <PopUp.Title>모집 알림 해지</PopUp.Title>
+        <PopUp.Content>
+          실시간으로 모집 상태를 안내해주는 모집 알림을 해지하시겠어요?
+        </PopUp.Content>
+        <PopUp.ButtonArea>
           <Button
             theme="secondary"
             as="button"
@@ -112,15 +111,12 @@ function App() {
             onClick={onClosePopUp}
           >
             취소
-          </Button>,
+          </Button>
           <Button as="button" type="button" onClick={onClosePopUp}>
             확인
-          </Button>,
-        ]}
-      />
-
-      <div css={[tw`mt-[30px]`, css``]} />
-      <BottomSheet />
+          </Button>
+        </PopUp.ButtonArea>
+      </PopUp>
 
       <div css={[tw`mt-[30px]`, css``]} />
       <Input />
