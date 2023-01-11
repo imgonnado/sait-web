@@ -34,15 +34,6 @@
     display: block;
     visibility: hidden;
     opacity: 0;
-    -webkit-transition: visibility 1.5s, opacity 1.5s;
-    -moz-transition: visibility 1.5s, opacity 1.5s;
-    -ms-transition: visibility 1.5s, opacity 1.5s;
-    -o-transition: visibility 1.5s, opacity 1.5s;
-    transition: visibility 1.5s, opacity 1.5s;
-    -webkit-transition-delay: 3s;
-    -moz-transition-delay: 3s;
-    -ms-transition-delay: 3s;
-    -o-transition-delay: 3s;
-    transition-delay: 3s;
+    transition: visibility 1.5s ease 3s, opacity 1.5s ease 3s;
   }
 }

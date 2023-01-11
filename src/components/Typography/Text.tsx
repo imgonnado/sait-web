@@ -8,8 +8,8 @@ type TextProps<C extends ElementType> = {
   size?: "lg" | "md" | "sm" | "xs";
   fw?: "demiLight" | "regular" | "medium" | "bold";
   color?: "default" | "darkgray" | "gray" | "lightgray" | "light";
-  children: ReactNode;
   className?: string;
+  children: ReactNode;
 } & ComponentPropsWithoutRef<C>;
 
 function Text<C extends ElementType = "p">({
@@ -17,8 +17,8 @@ function Text<C extends ElementType = "p">({
   size = "lg",
   fw = "regular",
   color = "default",
-  children,
   className,
+  children,
   ...restProps
 }: TextProps<C>) {
   const Component = as || "p";
