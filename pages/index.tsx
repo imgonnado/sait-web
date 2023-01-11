@@ -1,5 +1,4 @@
-import { css } from "@emotion/react";
-import { ReactElement } from "react";
+import { ReactElement, useEffect } from "react";
 import tw from "twin.macro";
 import Image from "next/image";
 
@@ -11,6 +10,9 @@ import LimitedTextarea from "../src/components/Textarea/LimitedTextarea";
 import ToastMessage from "../src/components/Toast/ToastMessage";
 import Button from "../src/components/Button/Button";
 import ButtonArea from "../src/components/Button/ButtonArea";
+import PopUp from "../src/components/PopUp/PopUp";
+import useDisclosure from "../src/hooks/useDisclosure";
+import Toast from "../src/components/Toast/Toast";
 import Radio from "../src/components/Radio/Radio";
 
 function App() {
@@ -80,25 +82,37 @@ function App() {
     },
   ];
 
+  // usePopup
+  const {
+    isOpen: isOpenPopUp,
+    onOpen: onOpenPopUp,
+    onClose: onClosePopUp,
+  } = useDisclosure();
+
+  // useToast
+  const {
+    isOpen: isOpenToast,
+    onOpen: onOpenToast,
+    onClose: onCloseToast,
+  } = useDisclosure();
+  useEffect(() => {
+    setTimeout(() => {
+      onCloseToast();
+    }, 3000);
+  });
+
   return (
-    <div
-      css={[
-        tw`block`,
-        css`
-          display: block;
-        `,
-      ]}
-    >
+    <div>
       <ProjectList data={projectListData} />
 
-      <div css={[tw`mt-[30px]`, css``]} />
+      <div css={[tw`mt-[30px]`]} />
       <ToastMessage />
       {/* style 위치 찾아야 됨 */}
-      <div css={[tw`mt-[30px]`, css``]} />
+      <div css={[tw`mt-[30px]`]} />
       <BottomSheet />
-      <div css={[tw`mt-[30px]`, css``]} />
+      <div css={[tw`mt-[30px]`]} />
       <Input />
-      <div css={[tw`mt-[30px]`, css``]} />
+      <div css={[tw`mt-[30px]`]} />
       <LimitedTextarea minInput={10} maxInput={1000} />
       <ButtonArea>
         <Button theme="secondary" as="a" href="www.google.com">
@@ -107,6 +121,7 @@ function App() {
         <Button as="button" width="narrow">
           버튼
         </Button>
+        <Button as="button">버튼</Button>
         <Button as="button">버튼</Button>
       </ButtonArea>
     </div>
