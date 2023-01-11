@@ -8,7 +8,7 @@ interface ButtonAreaProps {
   narrow?: "left" | "right";
 }
 
-function ButtonArea({ children, narrow, className }: ButtonAreaProps) {
+function ButtonArea({ children, narrow }: ButtonAreaProps) {
   return (
     <div
       className={clsx(

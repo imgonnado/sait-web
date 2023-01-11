@@ -1,0 +1,45 @@
+.text {
+  word-break: keep-all;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.md {
+  font-size: 14px;
+  line-height: 22px;
+}
+.sm {
+  font-size: 12px;
+  line-height: 18px;
+}
+.xs {
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.bold {
+  font-weight: 700;
+}
+.medium {
+  font-weight: 500;
+}
+.demiLight {
+  font-weight: 300;
+}
+
+.default {
+  color: var(--text-default);
+}
+.darkgray {
+  color: var(--text-dark-gray);
+}
+.gray {
+  color: var(--text-gray);
+}
+.lightgray {
+  color: var(--text-light-gray);
+}
+.light {
+  color: var(--text-light);
+}

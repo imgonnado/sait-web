@@ -1,0 +1,53 @@
+.text {
+  word-break: keep-all;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.\33xl {
+  font-size: 28px;
+  line-height: 42px;
+}
+.\32xl {
+  font-size: 24px;
+  line-height: 36px;
+}
+.xl {
+  font-size: 20px;
+  line-height: 30px;
+}
+.md {
+  font-size: 16px;
+  line-height: 24px;
+}
+.sm {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.bold {
+  font-weight: 700;
+}
+.medium {
+  font-weight: 500;
+}
+.demiLight {
+  font-weight: 300;
+}
+
+.default {
+  color: var(--text-default);
+}
+.darkgray {
+  color: var(--text-dark-gray);
+}
+.gray {
+  color: var(--text-gray);
+}
+.lightgray {
+  color: var(--text-light-gray);
+}
+.light {
+  color: var(--text-light);
+}
