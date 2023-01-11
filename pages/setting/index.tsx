@@ -41,13 +41,6 @@ function Index() {
         <Link href={link}>
           <a className={styles.listItem}>
             <Text>{title}</Text>
-            <Image
-              src="/asset/image/ico/ico_detail_arrow.svg"
-              alt="arrow"
-              layout="fixed"
-              width={16}
-              height={16}
-            />
           </a>
         </Link>
       ))}
