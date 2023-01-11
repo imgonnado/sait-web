@@ -7,12 +7,18 @@ import styles from "./PopUp.module.scss";
 interface PopUpProps {
   isOpen: boolean;
   onClose: () => void;
-  title?: string;
-  content?: string;
-  buttons: ReactNode | ReactNode[];
+  children: ReactNode;
 }
 
-function PopUp({ isOpen, onClose, title, content, buttons }: PopUpProps) {
+function Title({ children }: { children: ReactNode }) {
+  return <strong className={styles.popupTitle}>{children}</strong>;
+}
+
+function Content({ children }: { children: ReactNode }) {
+  return <p className={styles.popupContent}>{children}</p>;
+}
+
+function PopUp({ isOpen, onClose, children }: PopUpProps) {
   return (
     <>
       {isOpen && (
@@ -24,12 +30,14 @@ function PopUp({ isOpen, onClose, title, content, buttons }: PopUpProps) {
         />
       )}
       <dialog open={isOpen} className={styles.popupInner}>
-        <strong className={styles.popupTitle}>{title}</strong>
-        <p className={styles.popupContent}>{content}</p>
-        <ButtonArea>{buttons}</ButtonArea>
+        {children}
       </dialog>
     </>
   );
 }
+
+PopUp.Title = Title;
+PopUp.Content = Content;
+PopUp.ButtonArea = ButtonArea;
 
 export default PopUp;

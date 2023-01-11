@@ -1,8 +1,6 @@
 import { ReactElement, useEffect } from "react";
 import tw from "twin.macro";
-import Image from "next/image";
 
-import BottomSheet from "../src/components/BottomSheet/BottomSheet";
 import Input from "../src/components/Input/Input";
 import CommonLayout from "../src/components/Layout/CommonLayout";
 import ProjectList from "../src/components/ProjectList/ProjectList";
@@ -107,9 +105,6 @@ function App() {
 
       <div css={[tw`mt-[30px]`]} />
       <ToastMessage />
-      {/* style 위치 찾아야 됨 */}
-      <div css={[tw`mt-[30px]`]} />
-      <BottomSheet />
       <div css={[tw`mt-[30px]`]} />
       <Input />
       <div css={[tw`mt-[30px]`]} />
@@ -121,6 +116,7 @@ function App() {
         <Button as="button" width="narrow">
           버튼
         </Button>
+        <Button as="button">버튼</Button>
         <Button as="button">버튼</Button>
         <Button as="button">버튼</Button>
       </ButtonArea>
