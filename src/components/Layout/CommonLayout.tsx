@@ -18,7 +18,7 @@ interface CommonLayoutProps {
 export default function CommonLayout({
   children,
   header = true,
-  top = true,
+  top = false,
   mainClassName,
   mainStyles,
 }: CommonLayoutProps): ReactElement {
