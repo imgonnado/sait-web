@@ -8,6 +8,7 @@ type HeadingProps<C extends ElementType> = {
   size?: "3xl" | "2xl" | "xl" | "lg" | "md" | "sm";
   fw?: "demiLight" | "regular" | "medium" | "bold";
   color?: "default" | "darkgray" | "gray" | "lightgray" | "light";
+  className?: string;
   children: ReactNode;
 } & ComponentPropsWithoutRef<C>;
 
@@ -16,6 +17,7 @@ function Heading<C extends ElementType = "h1">({
   size = "lg",
   fw = "regular",
   color = "default",
+  className,
   children,
   ...restProps
 }: HeadingProps<C>) {
@@ -27,7 +29,8 @@ function Heading<C extends ElementType = "h1">({
         styles.text,
         styles[`${size}`],
         styles[`${fw}`],
-        styles[`${color}`]
+        styles[`${color}`],
+        className
       )}
       {...restProps}
     >
