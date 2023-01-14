@@ -5,13 +5,12 @@ import Input from "../src/components/Input/Input";
 import CommonLayout from "../src/components/Layout/CommonLayout";
 import ProjectList from "../src/components/ProjectList/ProjectList";
 import LimitedTextarea from "../src/components/Textarea/LimitedTextarea";
-import ToastMessage from "../src/components/Toast/ToastMessage";
-import Button from "../src/components/Button/Button";
-import ButtonArea from "../src/components/Button/ButtonArea";
 import PopUp from "../src/components/PopUp/PopUp";
 import useDisclosure from "../src/hooks/useDisclosure";
 import Toast from "../src/components/Toast/Toast";
-import Radio from "../src/components/Radio/Radio";
+import Button from "../src/components/Button/Button";
+import ButtonArea from "../src/components/Button/ButtonArea";
+import ToastMessage from "../src/components/Toast/ToastMessage";
 
 function App() {
   const projectListData = [
@@ -102,6 +101,41 @@ function App() {
   return (
     <div>
       <ProjectList data={projectListData} />
+
+      {/* popup */}
+      <div css={[tw`mt-[30px]`]} />
+      <Button as="button" type="button" onClick={onOpenPopUp}>
+        <span>[팝업버튼]알림 방식을 선택하세요.</span>
+      </Button>
+      <PopUp
+        isOpen={isOpenPopUp}
+        onClose={onClosePopUp}
+        title="모집 알림 해지"
+        content="실시간으로 모집 상태를 안내해주는
+모집 알림을 해지하시겠어요?"
+        buttons={[
+          <Button
+            theme="secondary"
+            as="button"
+            type="button"
+            onClick={onClosePopUp}
+          >
+            취소
+          </Button>,
+          <Button as="button" type="button" onClick={onClosePopUp}>
+            확인
+          </Button>,
+        ]}
+      />
+
+      <div css={[tw`mt-[30px]`]} />
+      <Button as="button" type="button" onClick={onOpenToast}>
+        <span>[토스트버튼]duration:3000</span>
+      </Button>
+      <Toast show={isOpenToast} title="본캐 홍길동 어쩌고 저쩌고 했습니다." />
+
+      <div css={[tw`mt-[30px]`]} />
+      <Input />
 
       <div css={[tw`mt-[30px]`]} />
       <ToastMessage />

@@ -1,0 +1,13 @@
+.main {
+  padding: 0px 20px;
+}
+
+.listItem {
+  height: 64px;
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid #f1f1f1;
+}
