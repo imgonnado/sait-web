@@ -1,0 +1,86 @@
+.tabArea {
+  position: relative;
+  overflow: hidden;
+  max-height: 85px;
+  margin-top: 12px;
+  transition: all 0.3s linear;
+  font-size: 0;
+
+  .tab {
+    max-width: calc(100% - 40px);
+    margin: 0 -4px 0;
+
+    li {
+      display: inline-block;
+      padding: 4px;
+    }
+  }
+
+  .keyword {
+    display: inline-block;
+
+    input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+
+      &:checked + label {
+        background-color: var(--primary-color);
+        color: var(--text-light);
+      }
+    }
+    label {
+      display: inline-block;
+      padding: 9px 12px;
+      background-color: var(--bg-2);
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
+
+  .more {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #e3e3e3;
+    border-radius: 8px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 16px;
+      height: 16px;
+      background: url("../../../public/asset/image/ico/ico_tab_down.svg")
+        no-repeat center;
+      background-size: 100% auto;
+      transition: all 0.1s linear;
+    }
+    &.active {
+      display: block;
+    }
+  }
+
+  &.on {
+    overflow: inherit;
+    max-height: inherit;
+    transition: all 0.3s linear;
+
+    .more::after {
+      transform: rotate(180deg) translate(50%, 50%);
+      transition: all 0.1s linear;
+      // background-image: url("../../../public/asset/image/ico/ico_tab_up.svg");
+    }
+  }
+}
