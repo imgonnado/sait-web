@@ -1,0 +1,40 @@
+.inputNumberSet {
+  display: flex;
+  position: relative;
+  align-items: center;
+
+  button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #e3e3e3;
+    box-sizing: border-box;
+    background-size: 24px auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &.minus {
+      background-image: url("../../../public/asset/image/ico/ico_input_number_minus.png");
+      &.stop {
+        background-image: url("../../../public/asset/image/ico/ico_input_number_minus_disabled.png");
+      }
+    }
+    &.plus {
+      background-image: url("../../../public/asset/image/ico/ico_input_number_plus.png");
+    }
+  }
+
+  .inputNumber {
+    width: calc(100% - 80px);
+    height: 44px;
+    margin: 0 8px;
+    padding: 10px;
+    border-radius: 16px;
+    border: 1px solid #e3e3e3;
+    box-sizing: border-box;
+    color: var(--text-default);
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+  }
+}
