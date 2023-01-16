@@ -1,0 +1,26 @@
+.inputPlace {
+  width: 100%;
+  height: 48px;
+  padding: 14px 14px 14px 48px;
+  border-radius: 14px;
+  border: 1px solid #e3e3e3;
+  box-sizing: border-box;
+  color: var(--text-default);
+  font-size: 14px;
+  font-weight: 400;
+  background: url("../../../public/asset/image/ico/lco_input_place.svg")
+    no-repeat 16px center;
+  background-size: 24px auto;
+
+  &::placeholder {
+    color: var(--text-light-gray);
+  }
+
+  &:focus {
+    outline-color: var(--primary-color);
+  }
+
+  &:disabled::placeholder {
+    color: #d9d9d9;
+  }
+}
