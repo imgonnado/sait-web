@@ -100,3 +100,26 @@
     transform: translate(66%, 0);
   }
 }
+
+.alarmList {
+  .alarm {
+    padding: 20px 0 20px 48px;
+    border-bottom: 1px solid var(--line-2);
+    background: url("../../../public/asset/image/ico/ico_alarm.svg") no-repeat
+      left 20px;
+    background-size: 32px auto;
+
+    .text {
+      color: var(--text-default);
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    .date {
+      display: block;
+      margin-top: 4px;
+      color: var(--text-gray);
+      font-size: 12px;
+    }
+  }
+}
