@@ -1,0 +1,34 @@
+.inputSearch {
+  width: 100%;
+  height: 48px;
+  padding: 14px 14px 14px 48px;
+  border-radius: 16px;
+  border: 1px solid #e3e3e3;
+  box-sizing: border-box;
+  color: var(--text-default);
+  font-size: 14px;
+  font-weight: 500;
+  background: url("../../../public/asset/image/ico/ico_input_search.svg")
+    no-repeat 16px center;
+  background-size: 20px auto;
+
+  &::placeholder {
+    color: var(--text-light-gray);
+  }
+
+  &:focus {
+    outline-color: var(--primary-color);
+  }
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: url("../../../public//asset/image/ico/ico_input_search_close.svg")
+      center center no-repeat;
+    cursor: pointer;
+  }
+
+  &:disabled::placeholder {
+    color: #d9d9d9;
+  }
+}
