@@ -1,0 +1,33 @@
+.modal {
+  display: none;
+  padding: 34px;
+  margin: 0 auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 101;
+  width: calc(100% - 40px);
+  max-width: 600px;
+
+  background: #ffffff;
+  border-radius: 16px;
+  box-sizing: border-box;
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-in-out;
+
+  & > * {
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.open {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
