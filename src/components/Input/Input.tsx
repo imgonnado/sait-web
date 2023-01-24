@@ -1,36 +1,32 @@
-import { useState } from "react";
-import Image from "next/image";
+import clsx from "clsx";
+import { ComponentPropsWithoutRef, ElementType } from "react";
 
 import styles from "./Input.module.scss";
 
-interface InputProps {
+type InputProps<C extends ElementType = "input"> = {
+  type?: string;
+  placeholder?: string;
   disabled?: boolean;
-}
+  isError?: boolean;
+  className?: string;
+} & ComponentPropsWithoutRef<C>;
 
-function Input({ disabled = false }: InputProps) {
-  const [inputOutline] = useState("#004eff"); // #ff0000
-
+function Input({
+  type = "text",
+  placeholder = "텍스트를 입력해 주세요",
+  disabled = false,
+  isError = false,
+  className,
+  ...restProps
+}: InputProps) {
   return (
-    <>
-      <input
-        type="text"
-        placeholder="텍스트를 입력해 주세요"
-        className={styles.input}
-        style={{ outlineColor: inputOutline }}
-        disabled={disabled}
-      />
-      <div className={styles.errMsg}>
-        <span className={styles.errMsg_IcnTooltip}>
-          <Image
-            src="/asset/image/ico/icn_tooltip.svg"
-            width={16}
-            height={16}
-            alt="tooltip"
-          />
-        </span>
-        이메일 주소를 입력해주세요.
-      </div>
-    </>
+    <input
+      type={type}
+      placeholder={placeholder}
+      className={clsx(styles.input, isError && styles.err, className)}
+      disabled={disabled}
+      {...restProps}
+    />
   );
 }
 

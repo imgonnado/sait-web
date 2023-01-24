@@ -7,7 +7,7 @@ type TextProps<C extends ElementType> = {
   as?: C;
   size?: "lg" | "md" | "sm" | "xs";
   fw?: "demiLight" | "regular" | "medium" | "bold";
-  color?: "default" | "darkgray" | "gray" | "lightgray" | "light";
+  color?: "default" | "darkgray" | "gray" | "lightgray" | "light" | "primary";
   className?: string;
   children: ReactNode;
 } & ComponentPropsWithoutRef<C>;
