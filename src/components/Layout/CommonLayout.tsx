@@ -11,6 +11,7 @@ interface CommonLayoutProps {
   children: React.ReactNode;
   header?: boolean;
   top?: boolean;
+  gnb?: boolean;
   mainClassName?: string;
   mainStyles?: React.CSSProperties;
 }
@@ -19,6 +20,7 @@ export default function CommonLayout({
   children,
   header = true,
   top = false,
+  gnb = true,
   mainClassName,
   mainStyles,
 }: CommonLayoutProps): ReactElement {
@@ -33,7 +35,7 @@ export default function CommonLayout({
       >
         {children}
       </main>
-      <GNB />
+      {gnb && <GNB />}
     </div>
   );
 }

@@ -8,6 +8,7 @@ type ButtonProps<C extends ElementType> = {
   theme?: "primary" | "secondary";
   size?: "md" | "sm";
   disabled?: boolean;
+  className?: string;
 } & ComponentPropsWithoutRef<C>;
 
 function Button<C extends ElementType = "button">({
@@ -16,6 +17,7 @@ function Button<C extends ElementType = "button">({
   theme = "primary",
   size = "md",
   disabled,
+  className,
   ...restProps
 }: ButtonProps<C>) {
   const Component = as || "button";
@@ -29,7 +31,8 @@ function Button<C extends ElementType = "button">({
         styles.btn,
         aDisabled && styles.disabled,
         styles[size],
-        styles[theme]
+        styles[theme],
+        className
       )}
       disabled={btnDisabled}
     >
