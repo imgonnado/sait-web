@@ -1,0 +1,32 @@
+.gauge {
+  &Label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--text-dark-gray);
+    margin-bottom: 4px;
+
+    &--right {
+      text-align: right;
+    }
+    &--left {
+      text-align: left;
+    }
+    &--center {
+      text-align: center;
+    }
+  }
+
+  &Bar {
+    background-color: #e3e3e3;
+    border-radius: 50px;
+    height: 2px;
+  }
+
+  &Progress {
+    background-color: var(--primary-color);
+    border-radius: 50px;
+    height: 2px;
+    width: 0px;
+  }
+}
