@@ -1,0 +1,41 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 20px;
+  padding-top: 144px;
+  padding-bottom: 32px;
+}
+
+.error {
+  position: relative;
+  height: 100%;
+}
+
+.imageWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.textWrapper {
+  text-align: center;
+  padding: 0 45px;
+  margin-bottom: 161px;
+
+  x & > * {
+    margin-bottom: 8px;
+  }
+}
+
+.buttonWrapper {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.content {
+  white-space: pre-wrap;
+}
