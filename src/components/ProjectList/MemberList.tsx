@@ -7,10 +7,11 @@ interface Member {
   id: number;
   // 이미지
   image: string;
+  // 페이지 이동 링크
   url: string;
   // 이름
   name: string;
-  // 제목
+  // 내용
   content?: string;
   // 경력
   career?: string;
