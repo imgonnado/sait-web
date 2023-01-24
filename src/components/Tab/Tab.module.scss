@@ -1,0 +1,38 @@
+/* tab */
+.content > .tabArea {
+  margin: -25px -20px 0;
+}
+.tabArea {
+  margin: 0 -20px;
+}
+.tabArea .tab {
+  display: flex;
+  height: 62px;
+  border-bottom: 1px solid var(--bg-4);
+}
+.tabArea .tab li {
+  flex-grow: 1;
+  text-align: center;
+}
+.tabArea .tab li a {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  color: var(--text-light-gray);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+}
+.tabArea .tab li a span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.tabArea .tab :global(li.on a) {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
