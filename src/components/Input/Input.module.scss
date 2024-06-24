@@ -15,13 +15,29 @@
     }
     background-color: #ffffff;
   }
+  &:focus {
+    outline-color: var(--primary-color);
+  }
+
+  & + .errMsg {
+    margin-top: 8px;
+  }
+
+  &.err {
+    border-color: var(--accent-color);
+    border-width: 2px;
+
+    &:focus {
+      outline-color: var(--accent-color);
+    }
+  }
 }
 
 .errMsg {
-  color: #ff0000;
+  color: var(--accent-color);
   position: relative;
 
-  &_IcnTooltip {
+  &_IcoTooltip {
     margin-right: 8px;
     vertical-align: middle;
   }

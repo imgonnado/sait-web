@@ -1,5 +1,6 @@
 import { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
 import clsx from "clsx";
+
 import styles from "./Button.module.scss";
 
 type ButtonProps<C extends ElementType> = {

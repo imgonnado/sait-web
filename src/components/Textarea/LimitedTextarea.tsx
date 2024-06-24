@@ -71,7 +71,7 @@ function LimitedTextarea({
         <div className={styles.errMsg}>
           <span className={styles.errMsg_IcnTooltip}>
             <Image
-              src="/asset/image/ico/icn_tooltip.svg"
+              src="/asset/image/ico/ico_tooltip.svg"
               width={16}
               height={16}
               alt="tooltip"

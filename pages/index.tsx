@@ -11,6 +11,7 @@ import Toast from "../src/components/Toast/Toast";
 import Button from "../src/components/Button/Button";
 import ButtonArea from "../src/components/Button/ButtonArea";
 import ToastMessage from "../src/components/Toast/ToastMessage";
+import ErrorMessage from "../src/components/Input/ErrorMessage";
 
 function App() {
   const projectListData = [
@@ -135,12 +136,14 @@ function App() {
       <Toast show={isOpenToast} title="본캐 홍길동 어쩌고 저쩌고 했습니다." />
 
       <div css={[tw`mt-[30px]`]} />
-      <Input />
+      <Input isError />
+      <ErrorMessage>이메일을 입력해주세요.</ErrorMessage>
 
       <div css={[tw`mt-[30px]`]} />
       <ToastMessage />
       <div css={[tw`mt-[30px]`]} />
       <Input />
+      <ErrorMessage>이메일을 입력해주세요.</ErrorMessage>
       <div css={[tw`mt-[30px]`]} />
       <LimitedTextarea minInput={10} maxInput={1000} />
       <ButtonArea>
